@@ -148,6 +148,40 @@
     50% { transform: translateY(-16px) rotate(8deg); }
   }
 
+  /* ===== Real fan showcase ===== */
+  .showcase {
+    background:
+      radial-gradient(circle at 80% 30%, rgba(124,58,237,0.12), transparent 50%),
+      linear-gradient(160deg, #efe7ff, #f7f2ff);
+  }
+  .showcase-grid { display: grid; gap: 26px; align-items: center; margin-top: 24px; }
+  @media (min-width: 760px) { .showcase-grid { grid-template-columns: 0.85fr 1fr; } }
+  .showcase-photo {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 22px 60px rgba(76,29,149,0.3);
+    border: 3px solid #fff;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .showcase-photo img { width: 100%; display: block; }
+  .showcase-photo .pin {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(43,26,107,0.85); color: #fff;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(4px);
+  }
+  .showcase-text { text-align: left; }
+  .showcase-text .big-kr { font-family: 'Black Han Sans','Noto Sans KR'; font-size: clamp(28px,7vw,40px); color: var(--purple-deep); line-height: 1.15; }
+  .showcase-text .rom { color: var(--pink); font-weight: 700; font-size: clamp(15px,4vw,18px); margin: 6px 0 14px; }
+  .showcase-text p { color: #4b4470; font-size: 15.5px; }
+  .showcase-text .made {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 1.5px solid #e0d3ff; border-radius: 999px;
+    padding: 8px 16px; margin-top: 16px; font-weight: 600; font-size: 14px; color: var(--purple);
+  }
+
   /* ===== Featured two sheets ===== */
   .featured-sec {
     background:
@@ -565,6 +599,30 @@
     <span class="en-only"> · Limited Edition 💜</span><span class="ko-only kr"> · 한정판 💜</span>
   </p>
 </header>
+
+<!-- ===== REAL FAN SHOWCASE ===== -->
+<section class="showcase">
+  <div class="wrap center">
+    <span class="section-tag">💜 Real ARMY · K-POPSTAY Busan</span>
+    <h2 class="title en-only">Made by ARMY, in the stadium</h2>
+    <h2 class="title ko-only kr">아미가 경기장에서 직접 만들었어요</h2>
+
+    <div class="showcase-grid">
+      <figure class="showcase-photo">
+        <span class="pin">📍 K-POPSTAY BUSAN</span>
+        <img src="assets/fan-busan.jpg" alt="ARMY holding a Borahae Hangul card reading 사랑해 방탄 아미 at K-POPSTAY Busan stadium" loading="lazy" />
+      </figure>
+      <div class="showcase-text">
+        <div class="big-kr">사랑해<br>방탄 아미</div>
+        <div class="rom en-only">"I love you, BTS &amp; ARMY" 💜</div>
+        <div class="rom ko-only kr">"사랑해, 방탄 그리고 아미" 💜</div>
+        <p class="en-only">A real ARMY raised this card high under the Busan sky — every letter built with the Borahae Hangul stickers. This is exactly what your challenge can look like. 💜</p>
+        <p class="ko-only kr">한 아미가 부산 하늘 아래 이 카드를 높이 들었어요 — 글자 하나하나 보라해 한글 스티커로 만들었죠. 여러분의 챌린지도 이렇게 될 수 있어요. 💜</p>
+        <span class="made">🎨 <span class="en-only">Made with Borahae Hangul stickers</span><span class="ko-only kr">보라해 한글 스티커로 제작</span></span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== FEATURED — THE TWO KEY SHEETS ===== -->
 <section class="featured-sec">
