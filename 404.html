@@ -98,23 +98,14 @@
       linear-gradient(160deg, #f3ecff 0%, #e9e0ff 60%, #f6f0ff 100%);
     overflow: hidden;
   }
-  .hero .welcome {
-    font-family: 'Black Han Sans', sans-serif;
-    color: var(--purple-bright);
-    font-size: clamp(18px, 5vw, 26px);
-    transform: rotate(-4deg);
-    display: inline-block;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
+  .hero-logo { display: inline-block; margin-bottom: 18px; }
+  .hero-logo img {
+    width: clamp(180px, 46vw, 260px);
+    height: auto;
+    display: block;
+    transition: transform 0.2s;
   }
-  .hero .wehome {
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: var(--purple-deep);
-    margin-bottom: 18px;
-  }
-  .hero .wehome span { color: var(--purple-bright); }
+  .hero-logo:hover img { transform: scale(1.04); }
   .hero h1 {
     font-family: 'Black Han Sans', sans-serif;
     line-height: 1.02;
@@ -438,6 +429,57 @@
   a.plain:hover { text-decoration: underline; text-underline-offset: 3px; }
   .section-tag a.plain:hover { text-decoration: underline; }
 
+  /* ===== Book covers (Hangul / 한글정음) ===== */
+  .covers { margin-top: 30px; display: flex; justify-content: center; }
+  .cover {
+    display: block;
+    width: min(380px, 86vw);
+    aspect-ratio: 1993 / 2790;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 22px 60px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #111;
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* poster frame: lavender top, green sides, pink bottom */
+    border-top: 14px solid #c4c8f5;
+    border-left: 16px solid #b9d6ad;
+    border-right: 16px solid #b9d6ad;
+    border-bottom: 18px solid #f4cdd0;
+  }
+  .cover:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+  .cover .inner { position: absolute; inset: 0; padding: 7% 7% 6%; display: flex; flex-direction: column; }
+  /* top shapes row */
+  .cover .shapes { display: flex; align-items: flex-start; gap: 4%; height: 22%; }
+  .cover .c-circle { width: 22%; aspect-ratio: 1; border-radius: 50%; background: #e8401f; }
+  .cover .c-tri { width: 0; height: 0; border-left: 11% solid transparent; border-right: 11% solid transparent; border-bottom: 19% solid #e8401f; align-self: flex-start; }
+  .cover .c-qr { margin-left: auto; width: 26%; background: #e8401f; padding: 4%; display: flex; flex-direction: column; align-items: center; }
+  .cover .c-qr img { width: 100%; display: block; background:#fff; }
+  .cover .c-qr small { font-size: 7px; color: #444; margin-top: 4px; text-align: center; word-break: break-all; }
+  /* vowel marks row */
+  .cover .marks { display: flex; align-items: center; gap: 8%; height: 16%; padding-left: 4%; margin-top: 3%; }
+  .cover .m-dot { width: 5%; aspect-ratio: 1; border-radius: 50%; background: #1452e8; }
+  .cover .m-i { width: 4%; height: 80%; background: #5ac24a; }
+  .cover .m-eu { width: 26%; height: 14%; background: #e8401f; align-self: center; }
+  /* numbers */
+  .cover .nums { margin-top: 4%; }
+  .cover .nums .big { font-family: 'Poppins',sans-serif; font-weight: 300; font-size: clamp(26px,9vw,46px); letter-spacing: 0.32em; color:#111; line-height:1; }
+  .cover .nums .small { font-family: 'Poppins',sans-serif; font-weight: 400; font-size: clamp(9px,2.6vw,13px); letter-spacing: 0.42em; color:#222; margin-top: 4px; }
+  /* title */
+  .cover .ctitle { margin-top: auto; }
+  .cover .word { font-family: 'Black Han Sans','Noto Sans KR',sans-serif; font-weight: 900; line-height: 1; letter-spacing: 0.02em; }
+  .cover .word.en { font-family:'Poppins',sans-serif; font-weight:800; font-size: clamp(34px,12vw,60px); }
+  .cover .word.ko { font-size: clamp(38px,14vw,66px); }
+  .cover .bar { background:#111; color:#fff; font-family:'Poppins',sans-serif; font-weight:700; letter-spacing:0.18em; padding:5px 8px; margin-top:8px; display:inline-block; }
+  .cover .bar.en { font-size: clamp(11px,3.2vw,16px); }
+  .cover .bar.ko-sub { background:transparent; color:#111; letter-spacing:0.3em; font-family:'Noto Sans KR',sans-serif; font-weight:700; font-size:clamp(15px,5vw,24px); padding:0; margin-top:6px; }
+  .cover .bar.ko-en { font-size: clamp(9px,2.6vw,13px); }
+  .cover .editor { margin-top: 7%; text-align:center; font-family:'Poppins','Noto Sans KR',sans-serif; font-size: clamp(11px,3vw,15px); color:#222; letter-spacing:0.1em; }
+  .cover .editor b { font-weight: 700; }
+  .cover-hint { text-align:center; font-size:13px; color:#b8b0e0; margin-top:14px; }
+
   /* ===== CTA / footer ===== */
   .cta { background: linear-gradient(160deg, #f3ecff, #e7dcff); text-align: center; }
   .btn {
@@ -455,6 +497,7 @@
   }
   .btn:hover { transform: translateY(-3px); }
   .btn.alt { background: #fff; color: var(--purple-bright); border: 2px solid var(--purple-bright); box-shadow: none; margin-left: 8px; }
+  .btn.dl { font-size: 15px; padding: 14px 24px; margin: 8px 6px 0; }
 
   footer {
     background: var(--purple-deep);
@@ -501,8 +544,9 @@
     <span style="top:60%;left:6%;animation-delay:2s;">💜</span>
     <span style="top:70%;right:8%;animation-delay:1.5s;">💜</span>
   </div>
-  <div class="welcome">Welcome Home!</div>
-  <div class="wehome"><a class="plain" href="https://wehome.me" target="_blank" rel="noopener">we<span>h</span>ome</a></div>
+  <a class="hero-logo" href="https://wehome.me" target="_blank" rel="noopener" aria-label="Welcome Home! Wehome">
+    <img src="assets/wehome-welcome.png" alt="Welcome Home! Wehome" />
+  </a>
 
   <h1 class="en-only">
     <span class="l1">BORAHAE</span>
@@ -696,6 +740,19 @@
   </div>
   <p class="hint en-only">← swipe to see all 5 sheets →</p>
   <p class="hint ko-only kr">← 옆으로 넘겨 5장을 모두 보세요 →</p>
+
+  <div class="wrap center" style="margin-top:26px;">
+    <a class="btn dl" href="assets/borahae-hangul-stickers.pdf" download>
+      <span class="en-only">⬇ Download all sticker sheets (PDF)</span>
+      <span class="ko-only kr">⬇ 스티커 전체 내용 PDF 다운로드</span>
+    </a>
+    <a class="btn alt dl" href="assets/borahae-hangul-challenge-guide.pdf" download>
+      <span class="en-only">⬇ Challenge guide (PDF)</span>
+      <span class="ko-only kr">⬇ 챌린지 안내 PDF</span>
+    </a>
+    <p class="hint en-only" style="margin-top:12px;">Print at home · 5 sheets · A4</p>
+    <p class="hint ko-only kr" style="margin-top:12px;">집에서 인쇄하세요 · 5장 · A4</p>
+  </div>
 </section>
 
 <!-- ===== EXAMPLES ===== -->
@@ -819,6 +876,54 @@
       <a class="en-only" href="https://wehome.me/trust/hangul-en" target="_blank" rel="noopener">HANGUL · The Cosmic Philosophy → wehome.me/trust/hangul-en</a>
       <a class="ko-only kr" href="https://wehome.me/trust/hangul" target="_blank" rel="noopener">한글정음 · 우주의 비밀코드 → wehome.me/trust/hangul</a>
     </div>
+
+    <!-- Book covers: EN = HANGUL, KO = 한글정음 -->
+    <div class="covers">
+      <!-- English cover -->
+      <a class="cover en-only" href="https://wehome.me/trust/hangul-en" target="_blank" rel="noopener">
+        <div class="inner">
+          <div class="shapes">
+            <div class="c-circle"></div>
+            <div class="c-tri"></div>
+            <div class="c-qr"><img src="assets/qr-hangul-en.png" alt="QR wehome.me/trust/hangul-en" /><small>wehome.me/trust/hangul-en</small></div>
+          </div>
+          <div class="marks"><span class="m-dot"></span><span class="m-i"></span><span class="m-eu"></span></div>
+          <div class="nums">
+            <div class="big">0&nbsp;&nbsp;1&nbsp;&nbsp;2</div>
+            <div class="small">3 9 8 4 9 1 3 6 9 4 3</div>
+          </div>
+          <div class="ctitle">
+            <div class="word en"><span style="color:#111">H</span><span style="color:#5ac24a">A</span><span style="color:#f3c969">N</span><span style="color:#1452e8">G</span><span style="color:#9aa0a6">U</span><span style="color:#e8401f">L</span></div>
+            <div class="bar en">THE&nbsp;&nbsp;COSMIC&nbsp;&nbsp;PHILOSOPHY</div>
+            <div class="editor">Edited by <b>Jo Sanku</b></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Korean cover -->
+      <a class="cover ko-only" href="https://wehome.me/trust/hangul" target="_blank" rel="noopener">
+        <div class="inner">
+          <div class="shapes">
+            <div class="c-circle"></div>
+            <div class="c-tri"></div>
+            <div class="c-qr"><img src="assets/qr-hangul.png" alt="QR wehome.me/trust/hangul" /><small>wehome.me/trust/hangul</small></div>
+          </div>
+          <div class="marks"><span class="m-dot"></span><span class="m-i"></span><span class="m-eu"></span></div>
+          <div class="nums">
+            <div class="big">0&nbsp;&nbsp;1&nbsp;&nbsp;2</div>
+            <div class="small">3 9 8 4 9 1 3 6 9 4 3</div>
+          </div>
+          <div class="ctitle">
+            <div class="word ko"><span style="color:#1452e8">한</span><span style="color:#5ac24a">글</span><span style="color:#e8401f">정</span><span style="color:#f3c969">음</span></div>
+            <div class="bar ko-sub">우 주 의 &nbsp;비 밀 코 드</div>
+            <div class="bar ko-en">HANGUL,&nbsp;&nbsp;THE&nbsp;&nbsp;COSMIC&nbsp;&nbsp;PHILOSOPHY</div>
+            <div class="editor">조 산 구 엮음</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <p class="cover-hint en-only">📖 tap the cover to read more</p>
+    <p class="cover-hint ko-only kr">📖 표지를 누르면 자세히 볼 수 있어요</p>
   </div>
 </section>
 
