@@ -433,6 +433,10 @@
   .cosmos-card .letters { margin-top: 10px; font-weight: 700; font-size: 20px; letter-spacing: 2px; }
   .philo-link { text-align:center; margin-top: 26px; }
   .philo-link a { color: var(--purple-light); font-weight: 700; text-decoration: none; border-bottom: 1.5px solid var(--purple-light); }
+  /* inline links that keep their parent's look */
+  a.plain { color: inherit; text-decoration: none; cursor: pointer; }
+  a.plain:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .section-tag a.plain:hover { text-decoration: underline; }
 
   /* ===== CTA / footer ===== */
   .cta { background: linear-gradient(160deg, #f3ecff, #e7dcff); text-align: center; }
@@ -498,7 +502,7 @@
     <span style="top:70%;right:8%;animation-delay:1.5s;">💜</span>
   </div>
   <div class="welcome">Welcome Home!</div>
-  <div class="wehome">we<span>h</span>ome</div>
+  <div class="wehome"><a class="plain" href="https://wehome.me" target="_blank" rel="noopener">we<span>h</span>ome</a></div>
 
   <h1 class="en-only">
     <span class="l1">BORAHAE</span>
@@ -511,8 +515,10 @@
   <div class="sub ko-only kr">한글을 배우고 · 사랑을 나누고 · 아미와 연결되세요</div>
 
   <p style="margin-top:18px;font-weight:700;color:var(--purple-deep);">
-    <span class="en-only">K-POPSTAY BUSAN 2026 · Limited Edition 💜</span>
-    <span class="ko-only kr">K-POPSTAY 부산 2026 · 한정판 💜</span>
+    <a class="plain" href="https://k-popstay.wehome.me" target="_blank" rel="noopener">
+      <span class="en-only">K-POPSTAY BUSAN 2026</span><span class="ko-only kr">K-POPSTAY 부산 2026</span>
+    </a>
+    <span class="en-only"> · Limited Edition 💜</span><span class="ko-only kr"> · 한정판 💜</span>
   </p>
 </header>
 
@@ -773,7 +779,10 @@
 <!-- ===== PHILOSOPHY ===== -->
 <section class="philosophy">
   <div class="wrap center">
-    <span class="section-tag">Hangul · The Cosmic Philosophy</span>
+    <span class="section-tag">
+      <a class="plain" href="https://wehome.me/trust/hangul-en" target="_blank" rel="noopener"><span class="en-only">HANGUL · The Cosmic Philosophy</span></a>
+      <a class="plain" href="https://wehome.me/trust/hangul" target="_blank" rel="noopener"><span class="ko-only kr">한글정음 · 우주의 비밀코드</span></a>
+    </span>
     <h2 class="title en-only">Heaven · Human · Earth</h2>
     <h2 class="title ko-only kr">하늘 · 사람 · 땅</h2>
     <p class="lead en-only">Hangul's consonants are built from three cosmic shapes — a circle for Heaven, a triangle for Human, and a square for Earth.</p>
@@ -807,7 +816,8 @@
     </div>
 
     <div class="philo-link">
-      <a href="https://wehome.me/trust/hangul-en" target="_blank" rel="noopener">Learn the full Hangul story → wehome.me/trust/hangul-en</a>
+      <a class="en-only" href="https://wehome.me/trust/hangul-en" target="_blank" rel="noopener">HANGUL · The Cosmic Philosophy → wehome.me/trust/hangul-en</a>
+      <a class="ko-only kr" href="https://wehome.me/trust/hangul" target="_blank" rel="noopener">한글정음 · 우주의 비밀코드 → wehome.me/trust/hangul</a>
     </div>
   </div>
 </section>
@@ -832,11 +842,11 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="wehome-logo">we<span>h</span>ome</div>
+  <div class="wehome-logo"><a class="plain" href="https://wehome.me" target="_blank" rel="noopener">we<span>h</span>ome</a></div>
   <div class="en-only">Your Home in Korea · Welcome Home!</div>
   <div class="ko-only kr">한국에서의 내 집 · Welcome Home!</div>
   <div class="partners">Wehome × Busan Metropolitan City × Global ARMY 💜</div>
-  <p>K-POPSTAY BUSAN 2026 · Limited Edition · Borahae Hangul</p>
+  <p><a class="plain" href="https://k-popstay.wehome.me" target="_blank" rel="noopener">K-POPSTAY BUSAN 2026</a> · Limited Edition · Borahae Hangul</p>
   <p style="margin-top:6px;">한글정품 @Hangulart · <a href="https://wehome.me" target="_blank" rel="noopener">wehome.me</a></p>
   <div class="welcome-kr kr">어서 오세요! 부산에서 만나요! 💜 Welcome to Busan! See you here!</div>
   <p style="margin-top:14px;font-size:11px;opacity:0.7;">© Wehome · 보라해 한글 · All rights reserved.</p>
